@@ -3,6 +3,7 @@ module "eks" {
   cluster_name    = local.cluster_name
   cluster_version = "1.20"
   subnets         = module.vpc.private_subnets
+  permissions_boundary = "arn:aws:iam::113304117666:policy/DefaultBoundaryPolicy"
 
   tags = {
     Environment = "training"
