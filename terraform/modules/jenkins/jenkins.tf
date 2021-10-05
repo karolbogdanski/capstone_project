@@ -20,6 +20,7 @@ resource "helm_release" "jenkins" {
   chart      = "jenkins"
   version    = "2.0.1"
   namespace  = "jenkins"
+  //TODO check if it gets right when we wait a little longer
   timeout    = 600
   values = [
     "${file("./modules/jenkins/helm-values.yaml")}"
