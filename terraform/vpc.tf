@@ -3,6 +3,11 @@ variable "region" {
   description = "AWS region"
 }
 
+variable "user_id" {
+  default     = "113304117666"
+  description = "User ID"
+}
+
 provider "aws" {
   region = var.region
 }
