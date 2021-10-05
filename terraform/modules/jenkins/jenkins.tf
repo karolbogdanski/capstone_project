@@ -6,6 +6,6 @@ resource "helm_release" "jenkins" {
   namespace  = "jenkins"
   timeout    = 600
   values = [
-    "${file("helm-values.yaml")}"
+    "${file("./modules/jenkins/helm-values.yaml")}"
   ]
 }
