@@ -8,7 +8,6 @@ variable "user_id" {
   description = "User ID"
 }
 
-
 variable "bucket_name" {
     default     = "backup-s3"
     descirption = "S3 bucket for terraform backup"
