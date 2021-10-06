@@ -2,7 +2,6 @@ master:
   installPlugins:
     #TODO get rid of uneccessary plugins
     #TODO get freshest versions
-    - ace-editor:1.1
     - apache-httpcomponents-client-4-api:4.5.10-2.0
     - authentication-tokens:1.4
     - bouncycastle-api:2.18
