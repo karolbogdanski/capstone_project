@@ -21,7 +21,7 @@ resource "helm_release" "jenkins" {
   version    = "8.0.14"
   namespace  = "jenkins"
   //TODO check if it gets right when we wait a little longer
-  timeout    = 600
+  timeout    = 240
   values = [
     "${file("./modules/jenkins/helm-values.yaml")}"
   ]
