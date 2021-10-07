@@ -31,7 +31,6 @@ module "vpc" {
     Owner   = "pdrabicki"
     Project = "capstone-10.21"
       }
-  }
 
   public_subnet_tags = {
     "kubernetes.io/cluster/${local.cluster_name}" = "shared"
