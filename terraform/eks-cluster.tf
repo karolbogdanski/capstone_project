@@ -9,6 +9,8 @@ module "eks" {
     Environment = "training"
     GithubRepo  = "terraform-aws-eks"
     GithubOrg   = "terraform-aws-modules"
+    Owner       = "pdrabicki"
+    Project     = "capstone-10.21"
   }
 
   vpc_id = module.vpc.vpc_id
@@ -23,22 +25,13 @@ module "eks" {
       instance_type                 = "t2.small"
       asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      
-      tags = {
-        Owner = "pdrabicki"
-        Project = "capstone-10.21"
-      }
     },
+
     {
       name                          = "worker-group-2"
       instance_type                 = "t2.medium"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       asg_desired_capacity          = 1
-
-      tags = {
-        Owner = "pdrabicki"
-        Project = "capstone-10.21"
-      }
     },
   ]
 }
