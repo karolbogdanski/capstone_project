@@ -9,5 +9,4 @@ resource "helm_release" "jenkins" {
   values = [
     "${file("./modules/jenkins/helm-values.yaml")}"
   ]
-  lint = true
 }
