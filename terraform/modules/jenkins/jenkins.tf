@@ -1,10 +1,11 @@
 resource "helm_release" "jenkins" {
-  name       = "jenkins"
-  repository = "https://charts.bitnami.com/bitnami"
-  chart      = "jenkins"
-  version    = "8.0.14"
-  namespace  = "jenkins"
-  timeout    = 240
+  name             = "jenkins"
+  repository       = "https://charts.jenkins.io"
+  chart            = "jenkins"
+  version          = "3.6.1"
+  create_namespace = true
+  namespace        = "jenkins"
+  timeout          = 300
   values = [
     "${file("./modules/jenkins/helm-values.yaml")}"
   ]
