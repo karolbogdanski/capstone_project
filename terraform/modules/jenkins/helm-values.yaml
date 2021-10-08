@@ -1,7 +1,4 @@
 controller:
-  admin:
-    userKey: admin
-    passwordKey: password
   additionalPlugins:
     - docker-plugin:1.2.3
     - workflow-multibranch:2.26
