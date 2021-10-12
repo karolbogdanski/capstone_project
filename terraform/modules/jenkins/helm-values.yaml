@@ -5,3 +5,4 @@ controller:
     - email-ext:2.83
     - parameterized-trigger:2.41
     - greenballs:1.15.1
+    - docker-workflow:1.26
