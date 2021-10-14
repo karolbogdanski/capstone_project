@@ -12,5 +12,5 @@ backup:
   schedule: "*/5 * * * *" 
   destination: "s3://internship-first-bucket/" 
   env: 
-    name: "AWS_REGION"
-    value: "us-east-2"
+    - name: "AWS_REGION"
+      value: "us-east-2"
