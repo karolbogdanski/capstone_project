@@ -9,7 +9,7 @@ controller:
 
 backup:
   enabled: true
-  schedule: "*/5 * * * *" 
+  schedule: "* 2 * * *" 
   destination: "s3://internship-first-bucket/" 
   env: 
     - name: "AWS_REGION"
