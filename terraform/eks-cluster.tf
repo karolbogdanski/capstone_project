@@ -13,6 +13,29 @@ module "eks" {
     Project     = "capstone-10.21"
   }
 
+  map_users = [ 
+      {
+      userarn = abc
+      username = abc
+      groups = ["system:masters"]
+      },
+      {
+      userarn = abc
+      username = abc
+      groups = ["system:masters"]
+      },
+      {
+      userarn = abc
+      username = abc
+      groups = ["system:masters"]
+      },
+      {
+      userarn = abc
+      username = abc
+      groups = ["system:masters"]
+      }
+   ]
+
   vpc_id = module.vpc.vpc_id
 
   workers_group_defaults = {
