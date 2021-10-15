@@ -14,7 +14,9 @@ backup:
   env: 
     - name: "AWS_REGION"
       value: "us-east-2"
-
-annotations: 
-    iam.amazonaws.com/role: "jenkins-rw-bucket-rights"
-    eks.amazonaws.com/role-arn: "arn:aws:iam::113304117666:role/jenkins-rw-bucket-rights"
+  serviceAccount:
+    create: true
+    name: "jenkins-sa"
+    annotations: 
+        iam.amazonaws.com/role: "jenkins-rw-bucket-rights"
+        eks.amazonaws.com/role-arn: "arn:aws:iam::113304117666:role/jenkins-rw-bucket-rights"
