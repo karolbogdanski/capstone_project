@@ -15,23 +15,23 @@ module "eks" {
 
   map_users = [ 
       {
-      userarn = abc
-      username = abc
+      userarn = join("", [var.account_number, var.user1])
+      username = var.user1
       groups = ["system:masters"]
       },
       {
-      userarn = abc
-      username = abc
+      userarn = join("", [var.account_number, var.user2])
+      username = var.user2
       groups = ["system:masters"]
       },
       {
-      userarn = abc
-      username = abc
+      userarn = join("", [var.account_number, var.user3])
+      username = var.user3
       groups = ["system:masters"]
       },
       {
-      userarn = abc
-      username = abc
+      userarn = join("", [var.account_number, var.user4])
+      username = var.user4
       groups = ["system:masters"]
       }
    ]
