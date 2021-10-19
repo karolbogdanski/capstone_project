@@ -13,6 +13,29 @@ module "eks" {
     Project     = "capstone-10.21"
   }
 
+  map_users = [ 
+      {
+      userarn = join("", [var.account_number, var.user1])
+      username = var.user1
+      groups = ["system:masters"]
+      },
+      {
+      userarn = join("", [var.account_number, var.user2])
+      username = var.user2
+      groups = ["system:masters"]
+      },
+      {
+      userarn = join("", [var.account_number, var.user3])
+      username = var.user3
+      groups = ["system:masters"]
+      },
+      {
+      userarn = join("", [var.account_number, var.user4])
+      username = var.user4
+      groups = ["system:masters"]
+      }
+   ]
+
   vpc_id = module.vpc.vpc_id
 
   workers_group_defaults = {
@@ -25,6 +48,7 @@ module "eks" {
       instance_type                 = "t2.small"
       asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
+      bootstrap_extra_args          = "--enable-docker-bridge true"
     },
 
     {
@@ -32,6 +56,7 @@ module "eks" {
       instance_type                 = "t2.medium"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       asg_desired_capacity          = 1
+      bootstrap_extra_args          = "--enable-docker-bridge true"
     },
   ]
 }
