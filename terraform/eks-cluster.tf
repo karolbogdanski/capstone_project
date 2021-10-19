@@ -48,7 +48,7 @@ module "eks" {
       instance_type                 = "t2.small"
       asg_desired_capacity          = 2
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_one.id]
-      bootstrap_extra_args          = "--enable-docker-bridge true"
+      user_data                     = base64encode(data.template_file.user_data.rendered)
     },
 
     {
@@ -56,7 +56,7 @@ module "eks" {
       instance_type                 = "t2.medium"
       additional_security_group_ids = [aws_security_group.worker_group_mgmt_two.id]
       asg_desired_capacity          = 1
-      bootstrap_extra_args          = "--enable-docker-bridge true"
+      user_data                     = base64encode(data.template_file.user_data.rendered)
     },
   ]
 }
