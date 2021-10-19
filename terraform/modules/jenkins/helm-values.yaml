@@ -10,7 +10,7 @@ controller:
 backup:
   enabled: true
   schedule: "*/5 * * * *"
-  destination: "s3://internship-first-bucket/jenkins-backup/"
+  destination: "s3://internship-first-bucket/jenkins-backup"
   env:
     - name: "AWS_REGION"
       value: "us-east-2"
