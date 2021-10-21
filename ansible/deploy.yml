@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  tasks:
+  - name: Deploy Result Service
+    shell: |
+      kubectl apply -f result-service.yml
+      kubectl apply -f result-deployment.yml
+  
+  - name: Deploy Seed-Data Service
+    shell: | 
+      kubectl apply -f seed-data-service.yml
+      kubectl apply -f seed-data-deployment.yml
+    
+  - name: Deploy Vote Service
+    shell: |
+      kubectl apply -f vote-service.yml
+      kubectl apply -f vote-deployment.yml
+    
+  - name: Deploy Worker Service
+    shell: | 
+      kubectl apply -f worker-service.yml
+      kubectl apply -f worker-deployment.yml

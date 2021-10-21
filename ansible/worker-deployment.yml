@@ -1,0 +1,20 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: workerservice-deployment
+spec:
+  selector:
+    matchLabels:
+      app: workerservice
+  replicas: 1 # only have one replica as this microservice uses an in-memory backing database
+  template:
+    metadata:
+      labels:
+        app: workerservice
+    spec:
+      containers:
+      - name: workerservice
+        image: 113304117666.dkr.ecr.us-east-2.amazonaws.com/worker:latest
+        ports:
+        - containerPort: 8080
