@@ -13,28 +13,28 @@ module "eks" {
     Project     = "capstone-10.21"
   }
 
-  map_users = [ 
-      {
-      userarn = join("", [var.account_number, var.user1])
+  map_users = [
+    {
+      userarn  = join("", [var.account_number, var.user1])
       username = var.user1
-      groups = ["system:masters"]
-      },
-      {
-      userarn = join("", [var.account_number, var.user2])
+      groups   = ["system:masters"]
+    },
+    {
+      userarn  = join("", [var.account_number, var.user2])
       username = var.user2
-      groups = ["system:masters"]
-      },
-      {
-      userarn = join("", [var.account_number, var.user3])
+      groups   = ["system:masters"]
+    },
+    {
+      userarn  = join("", [var.account_number, var.user3])
       username = var.user3
-      groups = ["system:masters"]
-      },
-      {
-      userarn = join("", [var.account_number, var.user4])
+      groups   = ["system:masters"]
+    },
+    {
+      userarn  = join("", [var.account_number, var.user4])
       username = var.user4
-      groups = ["system:masters"]
-      }
-   ]
+      groups   = ["system:masters"]
+    }
+  ]
 
   vpc_id = module.vpc.vpc_id
 
