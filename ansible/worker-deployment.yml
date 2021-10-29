@@ -21,3 +21,4 @@ spec:
           value: "10.0.3.165"
         ports:
         - containerPort: 8080
+      imagePullPolicy: Always
