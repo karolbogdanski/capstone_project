@@ -18,7 +18,7 @@ spec:
         image: 113304117666.dkr.ecr.us-east-2.amazonaws.com/worker:latest
         env:
         - name: REDIS_HOST
-          value: "10.0.3.165"
+          value: "redis-master.jenkins.svc.cluster.local"
         ports:
         - containerPort: 8080
-      imagePullPolicy: Always
+        imagePullPolicy: Always
