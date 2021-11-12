@@ -5,7 +5,14 @@ resource "helm_release" "postgresql" {
   version          = "10.12.0"
   namespace        = "jenkins"
   timeout          = 300
-  /*values = [
-    "${file("./modules/jenkins/helm-values.yaml")}"
-  ]*/
+
+  set {
+    name  = "global.postgresql.postgresqlUsername"
+    value = "postgres"
+  }
+
+  set {
+    name  = "global.postgresql.postgresqlPassword"
+    value = "postgres"
+  }
 }
