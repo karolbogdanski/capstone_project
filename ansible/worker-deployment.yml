@@ -19,6 +19,8 @@ spec:
         env:
         - name: REDIS_HOST
           value: "redis-master.jenkins.svc.cluster.local"
+        - name: POSTGRES_HOST
+          value: "postgresql.jenkins.svc.cluster.local"
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
