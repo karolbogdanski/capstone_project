@@ -17,4 +17,4 @@ spec:
       - name: resultservice
         image: 113304117666.dkr.ecr.us-east-2.amazonaws.com/result:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 4000
