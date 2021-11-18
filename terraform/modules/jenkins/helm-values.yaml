@@ -1,0 +1,9 @@
+controller:
+  additionalPlugins:
+    - docker-plugin:1.2.3
+    - workflow-multibranch:2.26
+    - email-ext:2.83
+    - parameterized-trigger:2.41
+    #- greenballs:1.15.1
+    - docker-workflow:1.26
+    - amazon-ecr:1.7

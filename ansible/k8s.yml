@@ -1,0 +1,9 @@
+---
+# Authenticate with token, and return all pods and services for all namespaces
+plugin: community.kubernetes.k8s
+connections:
+  - host: https://3052CA81A370370C5ED1E7BE7D8B21B0.gr7.us-east-2.eks.amazonaws.com
+    api_key: "{{ k8s_api_key }}"
+    validate_certs: false
+    
+ 
