@@ -13,3 +13,6 @@ override.tf.json
 
 kubeconfig_*
 terraform/users.tfvars
+
+*.playbook.yml.swp
+ansible/cluster-ansible-auth.yml

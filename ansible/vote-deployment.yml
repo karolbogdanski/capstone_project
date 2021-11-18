@@ -1,0 +1,23 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voteservice-deployment
+spec:
+  selector:
+    matchLabels:
+      app: voteservice
+  replicas: 1 # only have one replica as this microservice uses an in-memory backing database
+  template:
+    metadata:
+      labels:
+        app: voteservice
+    spec:
+      containers:
+      - name: voteservice
+        image: 113304117666.dkr.ecr.us-east-2.amazonaws.com/vote:latest
+        env:
+        - name: REDIS_HOST
+          value: "10.0.3.165"
+        ports:
+        - containerPort: 80
